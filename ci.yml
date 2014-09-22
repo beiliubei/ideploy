@@ -1,0 +1,15 @@
+replace_from_pics:
+  - from/a.txt
+
+replace_to_pics:
+  - to/a.txt
+
+
+template_source_files:
+  - template/template-a.txt
+
+template_target_files:
+  - template/a.txt
+
+id: helloworld
+xx: helloworld xx

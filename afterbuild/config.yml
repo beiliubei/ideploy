@@ -1,2 +1,4 @@
-appid: com.cobocn.hdms.app
-token: nu4s06BnAoHqugPRdEShv0lfRq7e9HahWL1kybwq
+appid:
+token:
+filepath: xx.ipa
+type: ios

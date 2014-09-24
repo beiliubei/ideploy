@@ -9,6 +9,8 @@ def copyfile(ymlfile ='ci.yml'):
     f = open(ymlfile)
     x = yaml.load(f)
     index = 0
+    if x['replace_from_pics'] == None or x['replace_to_pics'] == None:
+        return
     for filePath in x['replace_from_pics']:
         print 'source file :', filePath
         print 'target file :', x['replace_to_pics'][index]

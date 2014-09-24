@@ -1,8 +1,6 @@
 replace_from_pics:
-  - from/a.txt
 
 replace_to_pics:
-  - to/a.txt
 
 
 template_source_files:

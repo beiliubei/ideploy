@@ -6,6 +6,7 @@ import requests
 import json
 from requests_toolbelt import MultipartEncoder, MultipartEncoderMonitor
 from clint.textui.progress import Bar as ProgressBar
+import sys
 
 infourl = 'http://fir.im/api/v2/app/info/%s?token=%s&type=%s'
 uploadurl = 'http://up.qiniu.com/'
@@ -21,7 +22,12 @@ def my_callback(encoder):
     return callback
 
 if __name__ == '__main__':
-    f = open('config.yml')
+    ymlfile = sys.argv[1:]
+    if len(ymlfile) == 0:
+        f = open('config.yml')
+    else:
+        f = open(ymlfile[0])
+
     x = yaml.load(f)
     infourl = infourl % (x['appid'], x['token'], x['type'])
     print '===== do get info from ', infourl, ' ====='

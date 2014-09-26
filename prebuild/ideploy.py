@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 __author__ = 'benny'
 import shutil
 import yaml
 import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 def copyfile(ymlfile ='ci.yml'):
@@ -39,6 +42,7 @@ def replace(ymlfile ='ci.yml'):
             output.close()
         finally:
             fsource.close()
+        index = index + 1
 
 if __name__ == '__main__':
     ymlfile = sys.argv[1:]

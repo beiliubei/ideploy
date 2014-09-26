@@ -7,6 +7,7 @@ import json
 from requests_toolbelt import MultipartEncoder, MultipartEncoderMonitor
 from clint.textui.progress import Bar as ProgressBar
 import sys
+from glob import glob
 
 infourl = 'http://fir.im/api/v2/app/info/%s?token=%s&type=%s'
 uploadurl = 'http://up.qiniu.com/'
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     print '===== do upload file',x['filepath'], 'to', uploadurl, ' ====='
     e = MultipartEncoder(
     fields={'key': pkgkey, 'token': pkgtoken,
-            'file': ('filename', open(x['filepath'], 'rb'), 'text/plain')}
+            'file': ('filename', open(glob(x['filepath'])[0], 'rb'), 'text/plain')}
     )
     callback = my_callback(e)
     m = MultipartEncoderMonitor(e, callback)

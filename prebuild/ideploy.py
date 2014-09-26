@@ -38,8 +38,8 @@ def replace(ymlfile ='ci.yml'):
                 new = str(x[key])
                 if new == 'None':
                     new = ''
-                    print "replace ", old, "by ", new
-                    all_the_text = all_the_text.replace(old, new)
+                print "replace ", old, "by ", new
+                all_the_text = all_the_text.replace(old, new)
             output = open(x['template_target_files'][index], 'w')
             output.write(all_the_text)
             output.close()

@@ -48,10 +48,10 @@ if __name__ == '__main__':
     callback = my_callback(e)
     m = MultipartEncoderMonitor(e, callback)
     uploadresponse = requests.post(uploadurl, data=m, headers={'Content-Type': m.content_type})
-    print uploadresponse.text
+    # print uploadresponse.text
 
     appOid = json.loads(uploadresponse.text)['appOid']
     updateinfourl = updateinfourl % (appOid, x['token'])
     print '===== do update app info ', updateinfourl, ' ====='
     updateinforesponse = requests.put(updateinfourl, x)
-    print updateinforesponse.text
+    # print updateinforesponse.text

@@ -11,6 +11,7 @@ from glob import glob
 
 infourl = 'http://fir.im/api/v2/app/info/%s?token=%s&type=%s'
 uploadurl = 'http://up.qiniu.com/'
+updateinfourl = 'http://fir.im/api/v2/app/%s?token=%s'
 
 
 def my_callback(encoder):
@@ -48,3 +49,9 @@ if __name__ == '__main__':
     m = MultipartEncoderMonitor(e, callback)
     uploadresponse = requests.post(uploadurl, data=m, headers={'Content-Type': m.content_type})
     print uploadresponse.text
+
+    appOid = json.loads(uploadresponse.text)['appOid']
+    updateinfourl = updateinfourl % (appOid, x['token'])
+    print '===== do update app info ', updateinfourl, ' ====='
+    updateinforesponse = requests.put(updateinfourl, x)
+    print updateinforesponse.text

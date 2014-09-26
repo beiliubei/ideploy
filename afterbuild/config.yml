@@ -1,4 +1,16 @@
 appid:
 token:
-filepath: xx.ipa
-type: ios
+filepath: xx.apk
+type: android
+
+
+#acl	可选修改对该app有操作权限对应的用户id
+#short	可选修改短地址 3~8位数字或字符
+#name	可选修改App名
+#version	可选App版本号
+#versionShort	可选
+#changelog	可选更新记录
+#desc	可选App描述
+#devices	可选 包含的设备UDID数组
+#isInfoRefresh	可选是否自动同步AppStore数据
+#show	可选是否允许在广场中显示

@@ -44,5 +44,21 @@ ideploy
 ##### 运行
 	python firupload.py
 
+#### pgupload.py
+>用于打包完后上传到 [pgyer](http://pgyer.com>)
+
+##### 应用场景
+	打包好的x.ipa 或者 xx.apk 需要给QA进行测试，可以通过pgyer进行分发
+##### Install
+	 sudo easy_install clint
+	 sudo easy_install requests
+	 sudo easy_install requests_toolbelt
+
+##### pgconfig.yml
+
+
+##### 运行
+	python pgupload.py
+
 
 blog: [beiliubei](http://www.cnblogs.com/beiliubei/)

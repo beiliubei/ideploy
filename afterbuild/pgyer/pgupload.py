@@ -8,8 +8,6 @@ from clint.textui.progress import Bar as ProgressBar
 import sys
 from glob import glob
 
-uploadurl = 'http://www.pgyer.com/apiv1/app/upload'
-
 
 def my_callback(encoder):
     encoder_len = len(encoder)
@@ -20,8 +18,9 @@ def my_callback(encoder):
 
     return callback
 
-if __name__ == '__main__':
-    ymlfile = sys.argv[1:]
+
+def upload(ymlfile):
+    uploadurl = 'http://www.pgyer.com/apiv1/app/upload'
     if len(ymlfile) == 0:
         f = open('pgconfig.yml')
     else:
@@ -38,3 +37,8 @@ if __name__ == '__main__':
     m = MultipartEncoderMonitor(e, callback)
     uploadresponse = requests.post(uploadurl, data=m, headers={'Content-Type': m.content_type})
     print uploadresponse.text
+
+
+if __name__ == '__main__':
+    ymlfile = sys.argv[1:]
+    upload(ymlfile)

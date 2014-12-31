@@ -1,0 +1,4 @@
+Register:
+python setup.py register -r pypi
+Submit:
+python setup.py sdist upload -r pypi

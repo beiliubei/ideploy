@@ -9,22 +9,19 @@ from clint.textui.progress import Bar as ProgressBar
 import sys
 from glob import glob
 
-infourl = 'http://fir.im/api/v2/app/info/%s?token=%s&type=%s'
-uploadurl = 'http://up.qiniu.com/'
-updateinfourl = 'http://fir.im/api/v2/app/%s?token=%s'
-
 
 def my_callback(encoder):
     encoder_len = len(encoder)
     bar = ProgressBar(expected_size=encoder_len, filled_char='=')
-
     def callback(monitor):
         bar.show(monitor.bytes_read)
-
     return callback
 
-if __name__ == '__main__':
-    ymlfile = sys.argv[1:]
+
+def upload(ymlfile):
+    infourl = 'http://fir.im/api/v2/app/info/%s?token=%s&type=%s'
+    uploadurl = 'http://up.qiniu.com/'
+    updateinfourl = 'http://fir.im/api/v2/app/%s?token=%s'
     if len(ymlfile) == 0:
         f = open('config.yml')
     else:
@@ -55,3 +52,8 @@ if __name__ == '__main__':
     print '===== do update app info ', updateinfourl, ' ====='
     updateinforesponse = requests.put(updateinfourl, x)
     # print updateinforesponse.text
+
+
+if __name__ == '__main__':
+    ymlfile = sys.argv[1:]
+    upload(ymlfile)

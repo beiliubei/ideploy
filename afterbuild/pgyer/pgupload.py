@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     print '===== do upload file',x['file'], 'to', uploadurl, ' ====='
     e = MultipartEncoder(
-    fields={'uKey': x['uKey'], '_api_key': x['_api_key'], 'publishRange': x['publishRange'], 'isPublishToPublic': x['isPublishToPublic'],
+    fields={'uKey': x['uKey'], '_api_key': x['_api_key'], 'publishRange': x['publishRange'], 'isPublishToPublic': x['isPublishToPublic'], 'password':x['password'],
             'file': ('filename', open(glob(x['file'])[0], 'rb'), 'text/plain')}
     )
     callback = my_callback(e)

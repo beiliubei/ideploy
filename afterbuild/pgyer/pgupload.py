@@ -30,8 +30,8 @@ def upload(ymlfile):
 
     print '===== do upload file',x['file'], 'to', uploadurl, ' ====='
     e = MultipartEncoder(
-    fields={'uKey': x['uKey'], '_api_key': x['_api_key'], 'publishRange': x['publishRange'], 'isPublishToPublic': x['isPublishToPublic'], 'password':x['password'],
-            'file': ('filename', open(glob(x['file'])[0], 'rb'), 'text/plain')}
+    fields={'uKey': x['uKey'], '_api_key': x['_api_key'], 'publishRange': x['publishRange'], 'isPublishToPublic': x['isPublishToPublic'], 'password': x['password'],
+            'file': (glob(x['file'])[0], open(glob(x['file'])[0], 'rb'))}
     )
     callback = my_callback(e)
     m = MultipartEncoderMonitor(e, callback)

@@ -9,5 +9,5 @@ template_source_files:
 template_target_files:
   - template/a.txt
 
-id: helloworld
-xx: helloworld xx
+id: 'YES'
+xx: 'NO'

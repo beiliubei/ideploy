@@ -1,0 +1,5 @@
+.idea
+afterbuild/pgyer/dist
+afterbuild/pgyer/MANIFEST
+afterbuild/pgyer/pgupload.pyc
+prebuild/template/a.txt

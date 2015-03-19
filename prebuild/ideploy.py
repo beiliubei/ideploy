@@ -18,6 +18,7 @@ def copyfile(ymlfile ='ci.yml'):
         print 'source file :', filePath
         print 'target file :', x['replace_to_pics'][index]
         shutil.copy(filePath, x['replace_to_pics'][index])
+        index += 1
 
 
 def replace(ymlfile ='ci.yml'):
@@ -45,7 +46,7 @@ def replace(ymlfile ='ci.yml'):
             output.close()
         finally:
             fsource.close()
-        index = index + 1
+        index += 1
 
 if __name__ == '__main__':
     ymlfile = sys.argv[1:]

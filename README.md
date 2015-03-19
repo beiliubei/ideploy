@@ -8,6 +8,9 @@ ideploy
 ##### 应用场景
 * 多渠道build
 * 不同包显示不同的icon或者splash
+
+#### 安装
+    pip install ideploy
 	
 ##### 配置文件 ci.yml
 	replace_from_pics:
@@ -23,6 +26,7 @@ ideploy
 ##### 运行
 	python idepoly.py (默认加载ci.yml)
 	python idepoly.py xx.yml (自定义的yml,格式参考ci.yml)
+
 	
 ### AfterBuild tools
 #### firupload.py

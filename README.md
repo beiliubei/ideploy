@@ -9,7 +9,10 @@ ideploy
 * 多渠道build
 * 不同包显示不同的icon或者splash
 
-#### 安装
+##### 依赖库安装
+	 sudo easy_install pyyaml
+	 
+#### 安装到系统
     pip install ideploy
 	
 ##### 配置文件 ci.yml

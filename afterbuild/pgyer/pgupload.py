@@ -27,6 +27,8 @@ def upload(ymlfile):
         f = open(ymlfile[0])
 
     x = yaml.load(f)
+    #增加重试连接次数
+    requests.adapters.DEFAULT_RETRIES = 5
 
     print '===== do upload file',x['file'], 'to', uploadurl, ' ====='
     e = MultipartEncoder(
@@ -36,6 +38,9 @@ def upload(ymlfile):
     callback = my_callback(e)
     m = MultipartEncoderMonitor(e, callback)
     uploadresponse = requests.post(uploadurl, data=m, headers={'Content-Type': m.content_type})
+    #关闭多余的连接
+    s = requests.session()
+    s.keep_alive = False
     print uploadresponse.text
 
 

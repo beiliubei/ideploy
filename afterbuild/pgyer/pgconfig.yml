@@ -1,6 +1,6 @@
-uKey: 150157f2f666d804a9b02d8e80afdb00
-_api_key: 88d8be97a5c5aeb9374a78c2f2ecbbf3
-file: M*.ipa
+uKey: c3b79c0ff6e5a38f6806da8fbdfec9e1
+_api_key: c2d73d42a87ea03ad9e5f32bd937b0a6
+file: app1.apk
 #(ipa上传时为必填) 填写发布范围，值为（1，2，3），1：企业发布，2：直接发布，3：只有我安装
 publishRange: '1'
 #(选填) 是否发布到广场，值为（1，2），1：发布到广场，2：不发布到广场。默认为不发布到广场
